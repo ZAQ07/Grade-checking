@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Grade check </title>
+</head>
+
+<body>
+          <p><b><h1> Grade Checking </h1></b></p>    
+    <form onsubmit="gradeCheck(event)">
+        Enter Your Percentage To Calculate Your Grade: <br> <br>
+        <input id="gradeInput" type="number" required step="0.01">
+        <br> <br>
+        <button> Grade Check</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+        function gradeCheck(event) {
+
+            event.preventDefault();
+            let gradeInput = document.querySelector("#gradeInput").value;
+            gradeInput = Number(gradeInput);
+
+            console.log(gradeInput);
+
+            let message = "";
+           
+
+            if (gradeInput >= 80) {
+                message = "Excellent A++ "
+            } 
+
+            else if (gradeInput >= 70){
+                message = "  Grade A  v.good  "
+            }
+            else if (gradeInput >= 60){
+                message = "  Grade B Keep  it up  "
+            }
+                      else if (gradeInput >= 50){
+                message = " Grade C Work Hard  "
+            }
+                      else if (gradeInput >= 40){
+                message = " Grade  D    "
+            }
+                   else  {message=" You are Fail"
+                }
+
+            document.querySelector("#resultWindow").innerHTML = message;
+            }
+
+    </script>
+</body>
+</html>
